@@ -9,8 +9,6 @@ extern "C" {
 #include <string.h>
 }
 
-
-
 int main()
 {
 
