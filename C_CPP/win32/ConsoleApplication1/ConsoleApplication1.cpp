@@ -17,6 +17,13 @@ WNDPROC defWndProc = nullptr;
 
 
 
+
+
+LRESULT CALLBACK  WndProc(HWND, UINT, WPARAM, LPARAM);
+void OnSize(HWND hwnd, UINT flag, int width, int height);
+
+
+
 //主线程
 DWORD WINAPI mainThread(__in LPVOID lpParameter)
 {
@@ -44,12 +51,46 @@ static SYSTEMTIME sysTimeTe(void)
 static void windowTe(void)
 {
 
-	window = CreateWindowEx(0, WC_DIALOG, L"Form example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, nullptr, nullptr, nullptr, nullptr);
+
+	WNDCLASS wndclass;
+
+	wndclass.style = CS_HREDRAW | CS_VREDRAW;
+	wndclass.lpfnWndProc = WndProc;
+	wndclass.cbClsExtra = 0;
+	wndclass.cbWndExtra = 0;
+	wndclass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	//wndclass.hInstance = hInstance;
+	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wndclass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	//wndclass.lpszClassName = szAppName;
+	wndclass.lpszMenuName = NULL;
+
+	//RegisterClass 函数向操作系统注册窗口类。
+	if (!RegisterClass(&wndclass))
+	{
+		//MessageBox(NULL, TEXT("This program requires windows NT!"), szAppName, MB_ICONERROR);
+		//return 0;
+	}
+
+	window = CreateWindowEx(
+		0,					//允许为窗口指定一些可选行为（例如透明窗口），对于默认行为设为0
+		WC_DIALOG,			//window class
+		L"Form example",	//window text 
+		WS_OVERLAPPEDWINDOW, //window style
+
+		//size and position
+		CW_USEDEFAULT, CW_USEDEFAULT, 640, 480, 
+
+		nullptr, //parent window
+		nullptr, 
+		nullptr, 
+		nullptr);
 	//button = CreateWindowEx(0, WC_BUTTON, L"Close", WS_CHILD | WS_VISIBLE, 10, 10, 75, 25, window, nullptr, nullptr, nullptr);
 
 	//defWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
-	//ShowWindow(window, SW_SHOW);
+	//SetPixel(100, 200, )
+	ShowWindow(window, SW_SHOW);
+	UpdateWindow(window);
 }
 
 
@@ -86,6 +127,7 @@ int main(int argc, char* argv[])
 
 
 	mainHandle = CreateThread(NULL, NULL, mainThread, 0, 0, &mythreadid);
+	
 
 	
 	/*MSG message = { 0 };
@@ -108,3 +150,61 @@ int main(int argc, char* argv[])
 //   4. 使用错误列表窗口查看错误
 //   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
 //   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
+
+
+
+
+
+
+
+
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	static int cxClient, cyClient;
+	HDC  hdc;
+	PAINTSTRUCT ps;
+	int i;
+
+	switch (message)
+	{
+	case WM_CREATE:
+		cxClient = LOWORD(lParam);
+		cyClient = HIWORD(lParam);
+		return 0;
+	case  WM_PAINT:
+		hdc = BeginPaint(hwnd, &ps);
+		//for (i = 0; i < 800; i += cxClient)
+			SetPixel(hdc, i, i, RGB(255, 0, 0));
+		EndPaint(hwnd, &ps);
+	case  WM_DESTROY:
+		PostQuitMessage(0);
+		return 0;
+	}
+	return DefWindowProc(hwnd, message, wParam, lParam);
+
+}
+
+
+
+
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch (uMsg)
+	{
+	case WM_SIZE:
+	{
+		int width = LOWORD(lParam);  // Macro to get the low-order word.
+		int height = HIWORD(lParam); // Macro to get the high-order word.
+
+		// Respond to the message:
+		OnSize(hwnd, (UINT)wParam, width, height);
+	}
+	break;
+	}
+}
+
+void OnSize(HWND hwnd, UINT flag, int width, int height)
+{
+	// Handle resizing
+}
