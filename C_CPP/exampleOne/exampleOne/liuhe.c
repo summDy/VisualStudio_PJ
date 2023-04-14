@@ -1,9 +1,10 @@
 
 
 #include <stdio.h>
+#include<stddef.h>
 
 
-
+#pragma warning(disable:4996) 
 
 
 
@@ -48,7 +49,10 @@ unsigned char aoMenLiuHeSpecialCodeColor_Tab2022[] = {
 int cmain(void)
 {
 
-    char *str = "huiweiyong";
+    char str[20];
+
+    //sprintf(str,"%d", aoMenLiuHeSpecialCodeColor_Tab2021[10]);
+    sprintf_s(str, sizeof(str),"%d", aoMenLiuHeSpecialCodeColor_Tab2021[10]);
 
 	puts(str);
 	return 0;
