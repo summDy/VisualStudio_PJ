@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MarkSix;
 
 
 namespace liuhe
@@ -26,16 +27,32 @@ namespace liuhe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine("huiweiyong");
-            float revenue;
+            float revenue=0;
 
             //调用方法
             //实现实例化之后，才能用
-            MyClass myclass = new MyClass();
+
             string text = this.textBox1.Text;
 
-            revenue = myclass.myMethod(myclass.aomenLiuHeData2021);
-            richTextBox1.AppendText("年营收： " + text+ "\r\n");
+            Macao liuHeMacao = new Macao();
+            liuHeMacao.odds = 42;
+
+            //准备资金，字符串转float
+            float.TryParse(textBox1.Text, out liuHeMacao.cashPooling);
+
+            richTextBoxOut.AppendText("准备资金:" + liuHeMacao.cashPooling + "\r\n");
+            if (comboBoxYears.Text == "2022")
+            {
+                revenue = liuHeMacao.myMethod(liuHeMacao.aomenLiuHeData2022, liuHeMacao.odds, 5);
+            }
+            else
+            {
+                revenue = liuHeMacao.myMethod(liuHeMacao.aomenLiuHeData2021, liuHeMacao.odds, 5);
+            }
+
+            richTextBoxOut.AppendText("中奖次数：" + liuHeMacao.WinningNum + "\r\n");
+            richTextBoxOut.AppendText("年营收： " + revenue + "\r\n");
+            Console.WriteLine(comboBoxYears.Text);
 
         }
 
@@ -53,50 +70,11 @@ namespace liuhe
         {
 
         }
-    }
 
-
-
-
-    public class MyClass
-    {
-        //类成员
-        public  int[] aomenLiuHeData2021 = { 
-            3, 3, 3, 1, 2, 1, 2, 1, 3, 1, 3, 3, 2, 3, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 3, 3, // 1月
-            3, 3, 2, 2, 3, 2, 2, 2, 2, 3, 3, 3, 3, 2, 3, 2, 1, 2, 2, 2, 3, 2, 2, 2, 1, 3, 3, 2,          // 2月
-            2, 1, 1, 3, 1, 2, 2, 3, 3, 3, 2, 2, 3, 2, 1, 3, 3, 2, 1, 2, 1, 1, 2, 2, 2, 3, 3, 3, 1, 1, 2, // 3月
-            1, 3, 1, 1, 1, 1, 3, 2, 1, 2, 3, 2, 2, 1, 2, 1, 3, 1, 3, 3, 3, 1, 3, 1, 3, 2, 3, 2, 3, 1,    // 4月
-            3, 1, 3, 1, 3, 1, 3, 3, 1, 2, 1, 1, 3, 3, 3, 2, 2, 2, 2, 2, 3, 3, 3, 2, 1, 1, 1, 1, 2, 2, 3, // 5月
-            3, 3, 2, 3, 2, 3, 1, 2, 1, 3, 3, 3, 1, 1, 2, 2, 3, 1, 1, 1, 3, 1, 3, 3, 2, 3, 1, 2, 3, 2,    // 6月
-            3, 2, 3, 1, 3, 1, 1, 2, 1, 1, 3, 2, 3, 2, 3, 2, 1, 3, 2, 3, 2, 1, 1, 3, 2, 3, 2, 1, 3, 1, 2, // 7月
-            2, 2, 3, 3, 2, 2, 3, 2, 2, 3, 1, 3, 1, 2, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 3, 2, 1, 3, 2, 2, 1, // 8月
-            2, 2, 1, 3, 1, 1, 3, 2, 3, 1, 2, 1, 1, 3, 2, 2, 2, 1, 2, 3, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2,    // 9月
-            2, 2, 1, 1, 1, 2, 3, 1, 1, 3, 3, 3, 3, 1, 3, 2, 2, 1, 3, 1, 3, 2, 3, 2, 1, 3, 3, 3, 3, 3, 1, // 10月
-            1, 2, 1, 2, 1, 3, 3, 2, 1, 3, 2, 3, 1, 3, 1, 2, 2, 2, 1, 2, 3, 2, 2, 1, 1, 2, 2, 3, 2, 3,    // 11月
-            3, 1, 1, 1, 2, 3, 2, 1, 2, 1, 2, 2, 3, 1, 2, 3, 1, 3, 1, 3, 2, 2, 1, 2, 2, 2, 3, 1, 3, 2, 2  // 12月
-                                                                                                        
-        };
-
-        //public static readonly string arrayName = { value1, value2, ..., valueN };
-      
-
-        public float myMethod(int[] liuHeData )
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            float revenue;
-            revenue = 30000;
-            //方法实现
-            Console.WriteLine("我为什么要这么做" + aomenLiuHeData2021[1]);
-            if (liuHeData[3] == 3)
-            {
-                Console.WriteLine("中\n");
-            }
-            else
-            {
-                Console.WriteLine("不中\n");
-            }
-            return revenue;
+
         }
     }
-
 
 }

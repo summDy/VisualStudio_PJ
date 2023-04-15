@@ -1,12 +1,3 @@
-# VisualStudio_PJ
-使用visual studio开发，C/C++,C#等，_PJ表示_project
-
-
-
-
-
-
-
 # visual studio快捷键
 
 
@@ -26,7 +17,19 @@ Ctrl + K ,  Ctrl + D.  自动整理代码
 
 
 
-# visual studio 2022入门
+# C#开发入门
+
+
+
+https://developer.aliyun.com/article/993792
+
+看了这边文章，感觉C#很牛逼
+
+
+
+
+
+
 
 
 
