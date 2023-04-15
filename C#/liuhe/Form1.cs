@@ -36,7 +36,7 @@ namespace liuhe
 
             Macao liuHeMacao = new Macao();
             liuHeMacao.odds = 42;
-
+            
             //准备资金，字符串转float
             float.TryParse(textBox1.Text, out liuHeMacao.cashPooling);
 
