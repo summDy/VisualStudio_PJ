@@ -58,14 +58,15 @@ namespace MarkSix
 
         };
 
-        public int odds;  //赔率
-        private int referenceColor;    //参考的波色，也就是前一期的波色
-        private int noWinningMax;   //最长的不中奖期数
-        public int WinningNum;    //重甲次数
+        public int odds;    //赔率
+        private int referenceColor;     //参考的波色，也就是前一期的波色
+        private int noWinningMax;       //最长的不中奖期数
+        public int WinningNum;          //中奖次数
+        public float cashPoolingMix = 0;  //资金池中最少金额
 
         public int[] rulesOfBetting = {
-            5, 10, 20, 30, 50,//
-            80,100,50,80,100,//
+            5,  10,  15, 20, 30,  50,   //
+            80, 100, 50, 80, 100,       //
             0,0,0,0,0,//
             0,0,0,0,0,//
             0,0,0,0,0,//
@@ -93,13 +94,12 @@ namespace MarkSix
             length = liuHeData.Length;
 
             indexBetting = 0;
+            this.cashPoolingMix = this.cashPooling;
 
             for (int i = 0; i < liuHeData.Length; i++)
             {
 
                 bettingCur = this.rulesOfBetting[indexBetting];
-
-                Console.WriteLine("第" + i + "期投注资金:" + bettingCur + ",资金池：" + this.cashPooling);
 
                 if (liuHeData[i] == this.referenceColor)
                 {
@@ -107,12 +107,19 @@ namespace MarkSix
                     //中奖收入进入资金池
                     this.cashPooling += odds * bettingCur;
                     //下一期的投注资金
-                    indexBetting = 0;
+                    if (this.cashPooling > 15000)
+                    { indexBetting = 1; }
+                    else { indexBetting = 0; }
+
                     this.WinningNum++;
                 }
                 else
                 {
                     this.cashPooling -= (bettingCur * 16);
+                    if (this.cashPoolingMix > this.cashPooling)
+                    {
+                        this.cashPoolingMix = this.cashPooling;
+                    }
                     if (this.cashPooling < 0)
                     {
                         Console.WriteLine("资金不足\n");
@@ -147,7 +154,7 @@ namespace MarkSix
         //类成员
 
         public int[] liuhe ={
-          
+
             1,  //红
             2,  //红
             3,  //蓝
