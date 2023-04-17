@@ -36,6 +36,7 @@ namespace liuhe
             string text = this.textBox_reserve.Text;
 
             Macao liuHeMacao = new Macao();
+            Hongkong liuHeHK =new Hongkong();
 
 
             //准备资金，字符串转float
@@ -59,6 +60,22 @@ namespace liuhe
             if (radioButton_HongKong.Checked)
             {
                 // 当选中 radioButton_HongKong 控件时执行的代码
+                // 当选中 radioButton_Macao 控件时执行的代码
+                if (comboBoxYears.Text == "2021")
+                {
+                    //revenue = liuHeMacao.myMethod(liuHeMacao.aomenLiuHeData2021, liuHeMacao.odds, 5);
+                    //richTextBoxOut.AppendText("2021年的数据" + "\r\n");
+                }
+                else if (comboBoxYears.Text == "2022")
+                {
+                    revenue = liuHeMacao.myMethod(liuHeHK.HongkongLiuHeData2022, liuHeMacao.odds, 5);
+                    richTextBoxOut.AppendText("2022年的数据" + "\r\n");
+                }
+                else { }
+
+                richTextBoxOut.AppendText("中奖次数：" + liuHeMacao.WinningNum + "\r\n");
+                richTextBoxOut.AppendText("资金池最小金额：" + liuHeMacao.cashPoolingMix + "\r\n");
+                richTextBoxOut.AppendText("年营收： " + revenue + "\r\n");
             }
             else if (radioButton_Macao.Checked)
             {

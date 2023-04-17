@@ -45,10 +45,10 @@
             this.textBox_odds = new System.Windows.Forms.TextBox();
             this.button_clear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton_Macao = new System.Windows.Forms.RadioButton();
             this.radioButton_HongKong = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,20 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // radioButton_Macao
+            // 
+            resources.ApplyResources(this.radioButton_Macao, "radioButton_Macao");
+            this.radioButton_Macao.Name = "radioButton_Macao";
+            this.radioButton_Macao.TabStop = true;
+            this.radioButton_Macao.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_HongKong
+            // 
+            resources.ApplyResources(this.radioButton_HongKong, "radioButton_HongKong");
+            this.radioButton_HongKong.Name = "radioButton_HongKong";
+            this.radioButton_HongKong.TabStop = true;
+            this.radioButton_HongKong.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
@@ -197,20 +211,6 @@
             resources.GetString("comboBox1.Items2"),
             resources.GetString("comboBox1.Items3")});
             this.comboBox1.Name = "comboBox1";
-            // 
-            // radioButton_Macao
-            // 
-            resources.ApplyResources(this.radioButton_Macao, "radioButton_Macao");
-            this.radioButton_Macao.Name = "radioButton_Macao";
-            this.radioButton_Macao.TabStop = true;
-            this.radioButton_Macao.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_HongKong
-            // 
-            resources.ApplyResources(this.radioButton_HongKong, "radioButton_HongKong");
-            this.radioButton_HongKong.Name = "radioButton_HongKong";
-            this.radioButton_HongKong.TabStop = true;
-            this.radioButton_HongKong.UseVisualStyleBackColor = true;
             // 
             // liuhe
             // 
