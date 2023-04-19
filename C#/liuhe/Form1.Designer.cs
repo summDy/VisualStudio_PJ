@@ -221,6 +221,7 @@
             this.Controls.Add(this.richTextBoxOut);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "liuhe";
             this.menuStrip1.ResumeLayout(false);
