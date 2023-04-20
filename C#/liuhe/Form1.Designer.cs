@@ -48,7 +48,7 @@
             this.radioButton_Macao = new System.Windows.Forms.RadioButton();
             this.radioButton_HongKong = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_algorithm = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -171,12 +171,12 @@
             this.groupBox1.Controls.Add(this.radioButton_Macao);
             this.groupBox1.Controls.Add(this.radioButton_HongKong);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox_algorithm);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox_odds);
             this.groupBox1.Controls.Add(this.textBox_reserve);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox_odds);
             this.groupBox1.Controls.Add(this.comboBoxYears);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
@@ -201,16 +201,16 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // comboBox1
+            // comboBox_algorithm
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
-            this.comboBox1.Name = "comboBox1";
+            resources.ApplyResources(this.comboBox_algorithm, "comboBox_algorithm");
+            this.comboBox_algorithm.FormattingEnabled = true;
+            this.comboBox_algorithm.Items.AddRange(new object[] {
+            resources.GetString("comboBox_algorithm.Items"),
+            resources.GetString("comboBox_algorithm.Items1"),
+            resources.GetString("comboBox_algorithm.Items2"),
+            resources.GetString("comboBox_algorithm.Items3")});
+            this.comboBox_algorithm.Name = "comboBox_algorithm";
             // 
             // liuhe
             // 
@@ -251,7 +251,7 @@
         private System.Windows.Forms.Button button_clear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_algorithm;
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem1;
         private System.Windows.Forms.RadioButton radioButton_Macao;
         private System.Windows.Forms.RadioButton radioButton_HongKong;
