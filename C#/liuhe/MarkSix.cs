@@ -75,8 +75,8 @@ namespace MarkSix
         };
 
         public int[] rulesOfBettingTwoLine = {
-            5,  10,  15, 20, 30,  50,   //
-            80, 100, 0, 0, 00,     //
+            30,  50,  80, 100, 120,  150,   //
+            0, 0, 0, 0, 00,     //
             0,0,0,0,0,//
             0,0,0,0,0,//
             0,0,0,0,0,//
@@ -127,6 +127,7 @@ namespace MarkSix
                     if (this.cashPoolingMix > this.cashPooling)
                     {
                         this.cashPoolingMix = this.cashPooling;
+                      
                     }
                     if (this.cashPooling < 0)
                     {
@@ -198,7 +199,7 @@ namespace MarkSix
                     this.cashPooling += odds * threadOneBettingCur;
 
                     //准备下一次的投入资金
-                    threadOneindexBetting = 3;
+                    threadOneindexBetting = 0;
                     threadOneBettingCur = this.rulesOfBettingTwoLine[threadOneindexBetting];
 
                     bettingFailedNum = 0;
@@ -212,6 +213,7 @@ namespace MarkSix
                     if (this.cashPoolingMix > this.cashPooling)
                     {
                         this.cashPoolingMix = this.cashPooling;
+                        Console.WriteLine("第" + i + "期资金池:" + this.cashPooling);
                     }
                     if (this.cashPooling < 0)
                     {
@@ -253,7 +255,7 @@ namespace MarkSix
                     this.cashPooling += odds * threadTwoBettingCur;
 
                     //准备下一次的投入资金
-                    threadTwoindexBetting = 3;
+                    threadTwoindexBetting = 0;
                     threadTwoBettingCur = this.rulesOfBettingTwoLine[threadTwoindexBetting];
 
                     bettingFailedNum = 0;
@@ -265,6 +267,7 @@ namespace MarkSix
                     if (this.cashPoolingMix > this.cashPooling)
                     {
                         this.cashPoolingMix = this.cashPooling;
+                        Console.WriteLine("第" + i + "期资金池:" + this.cashPooling);
                     }
 
                     //准备下一次的投入资金
