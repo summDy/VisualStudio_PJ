@@ -285,67 +285,16 @@
     <value>宋体, 12pt</value>
   </data>
   <data name="comboBoxYears.Items" xml:space="preserve">
-    <value>2000</value>
+    <value>2022</value>
   </data>
   <data name="comboBoxYears.Items1" xml:space="preserve">
-    <value>2001</value>
-  </data>
-  <data name="comboBoxYears.Items2" xml:space="preserve">
-    <value>2002</value>
-  </data>
-  <data name="comboBoxYears.Items3" xml:space="preserve">
-    <value>2003</value>
-  </data>
-  <data name="comboBoxYears.Items4" xml:space="preserve">
-    <value>2004</value>
-  </data>
-  <data name="comboBoxYears.Items5" xml:space="preserve">
-    <value>2005</value>
-  </data>
-  <data name="comboBoxYears.Items6" xml:space="preserve">
-    <value>2006</value>
-  </data>
-  <data name="comboBoxYears.Items7" xml:space="preserve">
-    <value>2007</value>
-  </data>
-  <data name="comboBoxYears.Items8" xml:space="preserve">
-    <value>2008</value>
-  </data>
-  <data name="comboBoxYears.Items9" xml:space="preserve">
-    <value>2009</value>
-  </data>
-  <data name="comboBoxYears.Items10" xml:space="preserve">
-    <value>2010</value>
-  </data>
-  <data name="comboBoxYears.Items11" xml:space="preserve">
-    <value>2011</value>
-  </data>
-  <data name="comboBoxYears.Items12" xml:space="preserve">
-    <value>2012</value>
-  </data>
-  <data name="comboBoxYears.Items13" xml:space="preserve">
-    <value>2013</value>
-  </data>
-  <data name="comboBoxYears.Items14" xml:space="preserve">
-    <value>2014</value>
-  </data>
-  <data name="comboBoxYears.Items15" xml:space="preserve">
-    <value>2015</value>
-  </data>
-  <data name="comboBoxYears.Items16" xml:space="preserve">
-    <value>2018</value>
-  </data>
-  <data name="comboBoxYears.Items17" xml:space="preserve">
-    <value>2019</value>
-  </data>
-  <data name="comboBoxYears.Items18" xml:space="preserve">
-    <value>2020</value>
-  </data>
-  <data name="comboBoxYears.Items19" xml:space="preserve">
     <value>2021</value>
   </data>
-  <data name="comboBoxYears.Items20" xml:space="preserve">
-    <value>2022</value>
+  <data name="comboBoxYears.Items2" xml:space="preserve">
+    <value>2020</value>
+  </data>
+  <data name="comboBoxYears.Items3" xml:space="preserve">
+    <value>2019</value>
   </data>
   <data name="comboBoxYears.Location" type="System.Drawing.Point, System.Drawing">
     <value>75, 26</value>

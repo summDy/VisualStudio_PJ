@@ -124,24 +124,7 @@
             resources.GetString("comboBoxYears.Items"),
             resources.GetString("comboBoxYears.Items1"),
             resources.GetString("comboBoxYears.Items2"),
-            resources.GetString("comboBoxYears.Items3"),
-            resources.GetString("comboBoxYears.Items4"),
-            resources.GetString("comboBoxYears.Items5"),
-            resources.GetString("comboBoxYears.Items6"),
-            resources.GetString("comboBoxYears.Items7"),
-            resources.GetString("comboBoxYears.Items8"),
-            resources.GetString("comboBoxYears.Items9"),
-            resources.GetString("comboBoxYears.Items10"),
-            resources.GetString("comboBoxYears.Items11"),
-            resources.GetString("comboBoxYears.Items12"),
-            resources.GetString("comboBoxYears.Items13"),
-            resources.GetString("comboBoxYears.Items14"),
-            resources.GetString("comboBoxYears.Items15"),
-            resources.GetString("comboBoxYears.Items16"),
-            resources.GetString("comboBoxYears.Items17"),
-            resources.GetString("comboBoxYears.Items18"),
-            resources.GetString("comboBoxYears.Items19"),
-            resources.GetString("comboBoxYears.Items20")});
+            resources.GetString("comboBoxYears.Items3")});
             this.comboBoxYears.Name = "comboBoxYears";
             // 
             // label2
