@@ -49,6 +49,7 @@
             this.radioButton_HongKong = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_algorithm = new System.Windows.Forms.ComboBox();
+            this.选项OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,7 @@
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -96,7 +98,8 @@
             // 工具ToolStripMenuItem
             // 
             this.工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.配置ToolStripMenuItem});
+            this.配置ToolStripMenuItem,
+            this.选项OToolStripMenuItem});
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
             resources.ApplyResources(this.工具ToolStripMenuItem, "工具ToolStripMenuItem");
             // 
@@ -168,6 +171,7 @@
             // radioButton_Macao
             // 
             resources.ApplyResources(this.radioButton_Macao, "radioButton_Macao");
+            this.radioButton_Macao.Checked = true;
             this.radioButton_Macao.Name = "radioButton_Macao";
             this.radioButton_Macao.TabStop = true;
             this.radioButton_Macao.UseVisualStyleBackColor = true;
@@ -191,9 +195,14 @@
             this.comboBox_algorithm.Items.AddRange(new object[] {
             resources.GetString("comboBox_algorithm.Items"),
             resources.GetString("comboBox_algorithm.Items1"),
-            resources.GetString("comboBox_algorithm.Items2"),
-            resources.GetString("comboBox_algorithm.Items3")});
+            resources.GetString("comboBox_algorithm.Items2")});
             this.comboBox_algorithm.Name = "comboBox_algorithm";
+            // 
+            // 选项OToolStripMenuItem
+            // 
+            this.选项OToolStripMenuItem.Name = "选项OToolStripMenuItem";
+            resources.ApplyResources(this.选项OToolStripMenuItem, "选项OToolStripMenuItem");
+            this.选项OToolStripMenuItem.Click += new System.EventHandler(this.选项OToolStripMenuItem_Click);
             // 
             // liuhe
             // 
@@ -238,6 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem1;
         private System.Windows.Forms.RadioButton radioButton_Macao;
         private System.Windows.Forms.RadioButton radioButton_HongKong;
+        private System.Windows.Forms.ToolStripMenuItem 选项OToolStripMenuItem;
     }
 }
 

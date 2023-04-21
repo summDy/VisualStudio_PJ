@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MarkSix;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using tooloptions;
+
 
 
 namespace liuhe
@@ -94,7 +96,7 @@ namespace liuhe
                 }
                 else if (comboBoxYears.Text == "2022")
                 {
-                    if (comboBox_algorithm.Text == "反转双线")
+                    if (comboBox_algorithm.Text == "反转双波色")
                     {
                         revenue = liuHeMacao.twoLine_ColorInversion(liuHeMacao.aomenLiuHeData2022, liuHeMacao.odds, 5);
                     }
@@ -104,7 +106,9 @@ namespace liuhe
                     }
                     richTextBoxOut.AppendText("2022年的数据" + "\r\n");
                 }
-                else { }
+                else {
+                    richTextBoxOut.AppendText("此年份还没有相关的数据" + "\r\n");
+                }
 
                 richTextBoxOut.AppendText("中奖次数：" + liuHeMacao.WinningNum + "\r\n");
                 richTextBoxOut.AppendText("连续不中奖最大数：" + liuHeMacao.bettingFailedMax + "\r\n");
@@ -141,6 +145,19 @@ namespace liuhe
         private void button_clear_Click(object sender, EventArgs e)
         {
             richTextBoxOut.Clear();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void 选项OToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 创建新窗体实例
+            Options myForm = new Options();
+            // 显示新窗体
+            myForm.Show();
         }
     }
 

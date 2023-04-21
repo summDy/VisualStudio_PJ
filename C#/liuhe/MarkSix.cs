@@ -76,7 +76,7 @@ namespace MarkSix
 
         public int[] rulesOfBettingTwoLine = {
             30,  50,  80, 100, 120,  150,   //
-            0, 0, 0, 0, 00,     //
+            0, 0, 0, 0, 0,     //
             0,0,0,0,0,//
             0,0,0,0,0,//
             0,0,0,0,0,//
