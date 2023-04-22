@@ -16,6 +16,9 @@ namespace 串口调试助手
     public partial class Form1 : Form
     {
         private Timer timer;
+        private SerialPort _serialPort;
+        // 获取系统中可用的串口列表
+        private string[] portNames;// = SerialPort.GetPortNames();
 
         public Form1()
         {
@@ -24,42 +27,11 @@ namespace 串口调试助手
             timer.Interval = 1000; // 1000ms = 1s
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
 
             // 获取系统中可用的串口列表
-            string[] ports = SerialPort.GetPortNames();
-
-            // 遍历串口列表，获取每个串口的描述信息
-            foreach (string port in ports)
-            {
-                string description = string.Empty;
-
-                //ManagementObjectSearcher searcher = new ManagementObjectSearcher(port);
-                // 查询串口的描述信息
-                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_SerialPort WHERE DeviceID='" + port + "'");
-                foreach (ManagementObject portInfo in searcher.Get())
-                {
-                    description = portInfo["Description"].ToString();
-                }
-
-
-                // 输出串口及其描述信息
-                Console.WriteLine("串口名：{0}，描述信息：{1}", port, description);
-            }
-
-
-            // 获取串口列表
             string[] portNames = SerialPort.GetPortNames();
             comboBox_serialPort.Items.Clear();
+
             // 遍历串口列表
             foreach (string portName in portNames)
             {
@@ -71,8 +43,25 @@ namespace 串口调试助手
                     Console.WriteLine(portInfo["Description"].ToString());
 
                     comboBox_serialPort.Items.Add(portInfo["Description"].ToString() + "(" + portName + ")");
+                    comboBox_serialPort.SelectedIndex = 0;
                 }
             }
+            richTextBox_dataReceive.AppendText(comboBox_serialPort.Items[0].ToString());
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
 
 
 
@@ -119,6 +108,35 @@ namespace 串口调试助手
                 }
             }
             comboBox_serialPort.DropDownWidth = maxWidth;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _serialPort = new SerialPort("COM3", 9600, Parity.None, 8, StopBits.One);
+            try
+            {
+                _serialPort.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("串口不存在");
+            }
+
+            _serialPort.ErrorReceived += SerialPort_ErrorReceived;
+
+        }
+
+        //使用SerialPort类打开了串口设备，然后订阅了ErrorReceived事件。
+        //在该事件处理函数中，我们检测到串口设备被拔出时，可以进行一些处理，例如关闭串口等。
+        //需要注意的是，ErrorReceived事件会在串口出现错误时触发，例如数据接收错误、硬件故障等，
+        //因此在处理事件时需要对错误类型进行判断，以避免误判。在检测到设备被拔出后，我们可以调用SerialPort类的Close方法关闭串口。
+        private void SerialPort_ErrorReceived(object sender, SerialErrorReceivedEventArgs e)
+        {
+            if (e.EventType == SerialError.RXOver || e.EventType == SerialError.Overrun || e.EventType == SerialError.Frame || e.EventType == SerialError.RXParity)
+            {
+                Console.WriteLine("串口设备已被拔出");
+                this._serialPort.Close();
+            }
         }
     }
 }

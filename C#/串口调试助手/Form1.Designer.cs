@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_dataReceive = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -77,13 +77,13 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // richTextBox_dataReceive
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(218, 44);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(515, 403);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBox_dataReceive.Location = new System.Drawing.Point(218, 44);
+            this.richTextBox_dataReceive.Name = "richTextBox_dataReceive";
+            this.richTextBox_dataReceive.Size = new System.Drawing.Size(515, 403);
+            this.richTextBox_dataReceive.TabIndex = 0;
+            this.richTextBox_dataReceive.Text = "";
             // 
             // groupBox1
             // 
@@ -434,6 +434,7 @@
             this.button2.TabIndex = 13;
             this.button2.Text = "扫描可用串口";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox1
             // 
@@ -494,7 +495,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBox_dataReceive);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "WSYN串口调试助手";
@@ -516,7 +517,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox_dataReceive;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox_serialPort;
         private System.Windows.Forms.Label label1;
