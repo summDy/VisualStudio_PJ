@@ -121,6 +121,58 @@ private void MyMethod()
 
 
 
+### foreach
+
+foreach 语句中的表达式由关键字 in 隔开的两个项组成。
+
+in 右边的项是集合名，in 左边的项是变量名，用来存放该集合中的每个元素。
+
+该循环的运行过程如下：每一次循环时，从集合中取出一个新的元素值。放到只读变量中去，如果括号中的整个表达式返回值为 true，foreach 块中的语句就能够执行。
+
+一旦集合中的元素都已经被访问到，整个表达式的值为 false，控制流程就转入到 foreach 块后面的执行语句。
+
+
+
+foreach 语句仅能用于数组、字符串或集合类数据类型。
+
+
+
+`foreach` 是 C# 中用于迭代遍历集合类和数组的语句。
+
+```
+foreach (var item in collection)
+{
+    // 操作 item
+}
+
+```
+
+其中 `collection` 表示要迭代遍历的集合类或数组，`item` 表示当前迭代到的元素，类型根据 `collection` 的元素类型确定，可以使用 `var` 关键字进行隐式类型推断。
+
+`foreach` 语句还支持使用 `break` 和 `continue` 控制语句来中止或跳过迭代。例如，可以使用以下方式输出数组中所有奇数值的元素：
+
+```
+int[] numbers = { 1, 2, 3, 4, 5 };
+foreach (int num in numbers)
+{
+    if (num % 2 == 0)
+    {
+        // 跳过偶数值的元素
+        continue;
+    }
+    Console.WriteLine(num);
+}
+
+```
+
+此外，`foreach` 语句还支持使用 `IEnumerable` 接口和 `yield` 关键字来自定义迭代器，从而实现对自定义集合类的遍历操作。
+
+
+
+
+
+
+
 
 
 
@@ -248,7 +300,7 @@ InitializeComponent方法是设计器自动生成的方法。
         }
 ```
 
-在【解决方案资源管理器】中双击Options.cs，则进入到Options.cs设计窗口。如查看代码则Options.cs上右键选择【查看代码】
+在【解决方案资源管理器】中双击Options.cs，则进入到Options.cs设计窗口。如查看代码则Options.cs上右键选择【查看代码】。
 
 
 

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{61A02C76-24FD-4FF6-A08B-DF037CE6656E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>串口调试助手</RootNamespace>
-    <AssemblyName>串口调试助手</AssemblyName>
+    <RootNamespace>liuhe</RootNamespace>
+    <AssemblyName>liuhe</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
