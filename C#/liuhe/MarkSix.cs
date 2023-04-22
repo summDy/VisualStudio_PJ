@@ -57,16 +57,26 @@ namespace MarkSix
             3, 1, 2, 3, 1, 2, 1, 3, 3, 2, 3, 3, 3, 1, 3, 2, 3, 3, 1, 3, 1, 1, 1, 3, 3, 1, 3, 1, 2, 2, 2  // 12月
 
         };
-
+        int length;   //引入的数据长度
         public int odds;    //赔率
         private int referenceColor;     //参考的波色，也就是前一期的波色
-        private int noWinningMax;       //最长的不中奖期数
+        public int bettingFailedMax = 0;   //最长的不中奖期数
         public int WinningNum;          //中奖次数
         public float cashPoolingMix = 0;  //资金池中最少金额
 
         public int[] rulesOfBetting = {
             5,  10,  15, 20, 30,  50,   //
-            80, 100, 50, 80, 100,       //
+            80, 100, 50, 80, 100,     //
+            0,0,0,0,0,//
+            0,0,0,0,0,//
+            0,0,0,0,0,//
+            0,0,0,0,0//
+
+        };
+
+        public int[] rulesOfBettingTwoLine = {
+            30,  50,  80, 100, 120,  150,   //
+            0, 0, 0, 0, 0,     //
             0,0,0,0,0,//
             0,0,0,0,0,//
             0,0,0,0,0,//
@@ -81,17 +91,15 @@ namespace MarkSix
             this.WinningNum = 0;
         }
 
-
-
-
+        //连波色
         public float myMethod(int[] liuHeData, int odds, int initalStake)
         {
 
-            int length;   //引入的数据长度
+
             int indexBetting;
             int bettingCur;   //当前投注资金
 
-            length = liuHeData.Length;
+            this.length = liuHeData.Length;
 
             indexBetting = 0;
             this.cashPoolingMix = this.cashPooling;
@@ -119,6 +127,7 @@ namespace MarkSix
                     if (this.cashPoolingMix > this.cashPooling)
                     {
                         this.cashPoolingMix = this.cashPooling;
+                      
                     }
                     if (this.cashPooling < 0)
                     {
@@ -140,8 +149,157 @@ namespace MarkSix
 
             return this.cashPooling;
         }
+        //寻找同一个波色
+        public float singleColor(int[] liuHeData, int odds, int initalStake)
+        {
+            return 0;
+        }
+
+        //反转双线
+        public float twoLine_ColorInversion(int[] liuHeData, int odds, int initalStake)
+        {
+
+            int threadOneColorCur = 0;   //线程1当前投注的波色
+            int threadOneBettingCur = 0;   //当前投注资金
+            int threadOneindexBetting = 0;
 
 
+            int threadTwoColorCur = 0;  //线程2当前投注的波色
+            int threadTwoBettingCur = 0;
+            int threadTwoindexBetting = 0;
+
+            int colorReserve;       //备份波色
+            int bettingFailedNum = 0;
+
+            this.length = liuHeData.Length;
+            this.cashPoolingMix = this.cashPooling;
+
+            colorReserve = 1;
+            threadOneColorCur = 2;
+            threadTwoColorCur = 3;
+            threadOneBettingCur = 20;
+            threadTwoBettingCur = 20;
+            this.WinningNum = 0;
+
+            for (int i = 0; i < liuHeData.Length; i++)
+            {
+                //线程1
+                if (liuHeData[i] == threadOneColorCur)
+                {
+                    //中奖
+                    this.WinningNum++;
+
+                    //提取备份波色
+                    threadOneColorCur = colorReserve;
+
+                    //当前波色保存到备份波色
+                    colorReserve = liuHeData[i];
+
+                    //收入资金进入资金池
+                    this.cashPooling += odds * threadOneBettingCur;
+
+                    //准备下一次的投入资金
+                    threadOneindexBetting = 0;
+                    threadOneBettingCur = this.rulesOfBettingTwoLine[threadOneindexBetting];
+
+                    bettingFailedNum = 0;
+
+                }
+                else
+                {
+                    //资金池减去投注金额
+                    this.cashPooling -= threadOneBettingCur * 16;
+
+                    if (this.cashPoolingMix > this.cashPooling)
+                    {
+                        this.cashPoolingMix = this.cashPooling;
+                        Console.WriteLine("第" + i + "期资金池:" + this.cashPooling);
+                    }
+                    if (this.cashPooling < 0)
+                    {
+                        Console.WriteLine("资金不足");
+                    }
+
+                    //准备下一次的投入资金
+                    threadOneindexBetting++;
+                    //if (threadOneindexBetting > 8)
+                    //{
+                    //    threadOneindexBetting -= 3;
+                    //}
+                    //else
+                        threadOneBettingCur = this.rulesOfBettingTwoLine[threadOneindexBetting];
+
+                    bettingFailedNum++;
+                    if (bettingFailedNum > this.bettingFailedMax)
+                    {
+                        this.bettingFailedMax = bettingFailedNum;
+
+                    }
+
+
+                }
+                //===================================================================
+                //线程2
+                if (liuHeData[i] == threadTwoColorCur)
+                {
+                    //中奖
+                    //中奖
+                    this.WinningNum++;
+                    //提取备份波色
+                    threadTwoColorCur = colorReserve;
+
+                    //当前波色保存到备份波色
+                    colorReserve = liuHeData[i];
+
+                    //收入资金进入资金池
+                    this.cashPooling += odds * threadTwoBettingCur;
+
+                    //准备下一次的投入资金
+                    threadTwoindexBetting = 0;
+                    threadTwoBettingCur = this.rulesOfBettingTwoLine[threadTwoindexBetting];
+
+                    bettingFailedNum = 0;
+
+                }
+                else
+                { //资金池减去投注金额
+                    this.cashPooling -= threadTwoBettingCur * 16;
+                    if (this.cashPoolingMix > this.cashPooling)
+                    {
+                        this.cashPoolingMix = this.cashPooling;
+                        Console.WriteLine("第" + i + "期资金池:" + this.cashPooling);
+                    }
+
+                    //准备下一次的投入资金
+                    threadTwoindexBetting++;
+                    //if (threadTwoindexBetting > 8)
+                    //{
+                    //    threadTwoindexBetting -= 3;
+                    //}
+                    //else
+                        threadTwoBettingCur = this.rulesOfBettingTwoLine[threadTwoindexBetting];
+
+                    bettingFailedNum++;
+                    if (bettingFailedNum > this.bettingFailedMax)
+                    {
+                        this.bettingFailedMax = bettingFailedNum;
+
+                    }
+                    if (this.cashPooling < 0)
+                    {
+                        Console.WriteLine("资金不足");
+                    }
+                }
+
+
+            }
+
+
+
+
+
+            return this.cashPooling;
+        }
 
 
         public float algorithmToColor(int[] liuHeData, int odds, int initalStake)

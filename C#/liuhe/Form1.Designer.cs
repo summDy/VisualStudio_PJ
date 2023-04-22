@@ -48,7 +48,8 @@
             this.radioButton_Macao = new System.Windows.Forms.RadioButton();
             this.radioButton_HongKong = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_algorithm = new System.Windows.Forms.ComboBox();
+            this.选项OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,7 @@
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -96,7 +98,8 @@
             // 工具ToolStripMenuItem
             // 
             this.工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.配置ToolStripMenuItem});
+            this.配置ToolStripMenuItem,
+            this.选项OToolStripMenuItem});
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
             resources.ApplyResources(this.工具ToolStripMenuItem, "工具ToolStripMenuItem");
             // 
@@ -124,24 +127,7 @@
             resources.GetString("comboBoxYears.Items"),
             resources.GetString("comboBoxYears.Items1"),
             resources.GetString("comboBoxYears.Items2"),
-            resources.GetString("comboBoxYears.Items3"),
-            resources.GetString("comboBoxYears.Items4"),
-            resources.GetString("comboBoxYears.Items5"),
-            resources.GetString("comboBoxYears.Items6"),
-            resources.GetString("comboBoxYears.Items7"),
-            resources.GetString("comboBoxYears.Items8"),
-            resources.GetString("comboBoxYears.Items9"),
-            resources.GetString("comboBoxYears.Items10"),
-            resources.GetString("comboBoxYears.Items11"),
-            resources.GetString("comboBoxYears.Items12"),
-            resources.GetString("comboBoxYears.Items13"),
-            resources.GetString("comboBoxYears.Items14"),
-            resources.GetString("comboBoxYears.Items15"),
-            resources.GetString("comboBoxYears.Items16"),
-            resources.GetString("comboBoxYears.Items17"),
-            resources.GetString("comboBoxYears.Items18"),
-            resources.GetString("comboBoxYears.Items19"),
-            resources.GetString("comboBoxYears.Items20")});
+            resources.GetString("comboBoxYears.Items3")});
             this.comboBoxYears.Name = "comboBoxYears";
             // 
             // label2
@@ -171,12 +157,12 @@
             this.groupBox1.Controls.Add(this.radioButton_Macao);
             this.groupBox1.Controls.Add(this.radioButton_HongKong);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox_algorithm);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox_odds);
             this.groupBox1.Controls.Add(this.textBox_reserve);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox_odds);
             this.groupBox1.Controls.Add(this.comboBoxYears);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
@@ -185,6 +171,7 @@
             // radioButton_Macao
             // 
             resources.ApplyResources(this.radioButton_Macao, "radioButton_Macao");
+            this.radioButton_Macao.Checked = true;
             this.radioButton_Macao.Name = "radioButton_Macao";
             this.radioButton_Macao.TabStop = true;
             this.radioButton_Macao.UseVisualStyleBackColor = true;
@@ -201,16 +188,21 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // comboBox1
+            // comboBox_algorithm
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
-            this.comboBox1.Name = "comboBox1";
+            resources.ApplyResources(this.comboBox_algorithm, "comboBox_algorithm");
+            this.comboBox_algorithm.FormattingEnabled = true;
+            this.comboBox_algorithm.Items.AddRange(new object[] {
+            resources.GetString("comboBox_algorithm.Items"),
+            resources.GetString("comboBox_algorithm.Items1"),
+            resources.GetString("comboBox_algorithm.Items2")});
+            this.comboBox_algorithm.Name = "comboBox_algorithm";
+            // 
+            // 选项OToolStripMenuItem
+            // 
+            this.选项OToolStripMenuItem.Name = "选项OToolStripMenuItem";
+            resources.ApplyResources(this.选项OToolStripMenuItem, "选项OToolStripMenuItem");
+            this.选项OToolStripMenuItem.Click += new System.EventHandler(this.选项OToolStripMenuItem_Click);
             // 
             // liuhe
             // 
@@ -221,6 +213,7 @@
             this.Controls.Add(this.richTextBoxOut);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "liuhe";
             this.menuStrip1.ResumeLayout(false);
@@ -250,10 +243,11 @@
         private System.Windows.Forms.Button button_clear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_algorithm;
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem1;
         private System.Windows.Forms.RadioButton radioButton_Macao;
         private System.Windows.Forms.RadioButton radioButton_HongKong;
+        private System.Windows.Forms.ToolStripMenuItem 选项OToolStripMenuItem;
     }
 }
 

@@ -144,7 +144,7 @@
     <value>3</value>
   </data>
   <data name="richTextBoxOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 28</value>
+    <value>222, 28</value>
   </data>
   <data name="richTextBoxOut.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 288</value>
@@ -192,7 +192,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox_reserve.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -222,7 +222,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -238,6 +238,12 @@
   </data>
   <data name="配置ToolStripMenuItem.Text" xml:space="preserve">
     <value>配置</value>
+  </data>
+  <data name="选项OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="选项OToolStripMenuItem.Text" xml:space="preserve">
+    <value>选项(O)</value>
   </data>
   <data name="工具ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 21</value>
@@ -285,67 +291,16 @@
     <value>宋体, 12pt</value>
   </data>
   <data name="comboBoxYears.Items" xml:space="preserve">
-    <value>2000</value>
+    <value>2022</value>
   </data>
   <data name="comboBoxYears.Items1" xml:space="preserve">
-    <value>2001</value>
-  </data>
-  <data name="comboBoxYears.Items2" xml:space="preserve">
-    <value>2002</value>
-  </data>
-  <data name="comboBoxYears.Items3" xml:space="preserve">
-    <value>2003</value>
-  </data>
-  <data name="comboBoxYears.Items4" xml:space="preserve">
-    <value>2004</value>
-  </data>
-  <data name="comboBoxYears.Items5" xml:space="preserve">
-    <value>2005</value>
-  </data>
-  <data name="comboBoxYears.Items6" xml:space="preserve">
-    <value>2006</value>
-  </data>
-  <data name="comboBoxYears.Items7" xml:space="preserve">
-    <value>2007</value>
-  </data>
-  <data name="comboBoxYears.Items8" xml:space="preserve">
-    <value>2008</value>
-  </data>
-  <data name="comboBoxYears.Items9" xml:space="preserve">
-    <value>2009</value>
-  </data>
-  <data name="comboBoxYears.Items10" xml:space="preserve">
-    <value>2010</value>
-  </data>
-  <data name="comboBoxYears.Items11" xml:space="preserve">
-    <value>2011</value>
-  </data>
-  <data name="comboBoxYears.Items12" xml:space="preserve">
-    <value>2012</value>
-  </data>
-  <data name="comboBoxYears.Items13" xml:space="preserve">
-    <value>2013</value>
-  </data>
-  <data name="comboBoxYears.Items14" xml:space="preserve">
-    <value>2014</value>
-  </data>
-  <data name="comboBoxYears.Items15" xml:space="preserve">
-    <value>2015</value>
-  </data>
-  <data name="comboBoxYears.Items16" xml:space="preserve">
-    <value>2018</value>
-  </data>
-  <data name="comboBoxYears.Items17" xml:space="preserve">
-    <value>2019</value>
-  </data>
-  <data name="comboBoxYears.Items18" xml:space="preserve">
-    <value>2020</value>
-  </data>
-  <data name="comboBoxYears.Items19" xml:space="preserve">
     <value>2021</value>
   </data>
-  <data name="comboBoxYears.Items20" xml:space="preserve">
-    <value>2022</value>
+  <data name="comboBoxYears.Items2" xml:space="preserve">
+    <value>2020</value>
+  </data>
+  <data name="comboBoxYears.Items3" xml:space="preserve">
+    <value>2019</value>
   </data>
   <data name="comboBoxYears.Location" type="System.Drawing.Point, System.Drawing">
     <value>75, 26</value>
@@ -415,7 +370,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
+    <value>6, 138</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -436,13 +391,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="textBox_odds.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 12pt</value>
   </data>
   <data name="textBox_odds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 61</value>
+    <value>75, 135</value>
   </data>
   <data name="textBox_odds.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 26</value>
@@ -463,7 +418,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox_odds.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="button_clear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -491,6 +446,81 @@
   </data>
   <data name="&gt;&gt;button_clear.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Macao.Name" xml:space="preserve">
+    <value>radioButton_Macao</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Macao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Macao.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_Macao.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_HongKong.Name" xml:space="preserve">
+    <value>radioButton_HongKong</value>
+  </data>
+  <data name="&gt;&gt;radioButton_HongKong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_HongKong.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_HongKong.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox_algorithm.Name" xml:space="preserve">
+    <value>comboBox_algorithm</value>
+  </data>
+  <data name="&gt;&gt;comboBox_algorithm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_algorithm.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox_algorithm.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 12pt</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 28</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 248</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>数据配置</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="radioButton_Macao.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -562,7 +592,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 138</value>
+    <value>6, 65</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -585,71 +615,41 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="comboBox_algorithm.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 12pt</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>算法1-连波</value>
+  <data name="comboBox_algorithm.Items" xml:space="preserve">
+    <value>连波色</value>
   </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>算法2</value>
+  <data name="comboBox_algorithm.Items1" xml:space="preserve">
+    <value>反转双波色</value>
   </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>算法3</value>
+  <data name="comboBox_algorithm.Items2" xml:space="preserve">
+    <value>全波色</value>
   </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
-    <value>算法4</value>
+  <data name="comboBox_algorithm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 62</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 135</value>
-  </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="comboBox_algorithm.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 24</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="comboBox_algorithm.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="comboBox1.Text" xml:space="preserve">
-    <value>算法1-连波</value>
+  <data name="comboBox_algorithm.Text" xml:space="preserve">
+    <value>连波色</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;comboBox_algorithm.Name" xml:space="preserve">
+    <value>comboBox_algorithm</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;comboBox_algorithm.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;comboBox_algorithm.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;comboBox_algorithm.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>宋体, 12pt</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 28</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 248</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>数据配置</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -659,6 +659,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>494, 328</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>WSYN</value>
@@ -691,6 +694,12 @@
     <value>helpToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;选项OToolStripMenuItem.Name" xml:space="preserve">
+    <value>选项OToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;选项OToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
