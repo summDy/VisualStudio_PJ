@@ -223,6 +223,8 @@
             this.comboBox_serialPort.Name = "comboBox_serialPort";
             this.comboBox_serialPort.Size = new System.Drawing.Size(121, 24);
             this.comboBox_serialPort.TabIndex = 1;
+            this.comboBox_serialPort.DropDown += new System.EventHandler(this.comboBox_serialPort_DropDown);
+            this.comboBox_serialPort.SelectedIndexChanged += new System.EventHandler(this.comboBox_serialPort_SelectedIndexChanged);
             // 
             // label1
             // 

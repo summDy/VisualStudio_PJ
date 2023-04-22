@@ -70,7 +70,7 @@ namespace 串口调试助手
                     // 输出串口描述信息
                     Console.WriteLine(portInfo["Description"].ToString());
 
-                    comboBox_serialPort.Items.Add(portInfo["Description"].ToString()+"("+portName+")");
+                    comboBox_serialPort.Items.Add(portInfo["Description"].ToString() + "(" + portName + ")");
                 }
             }
 
@@ -100,6 +100,25 @@ namespace 串口调试助手
 
 
         }
-    }
 
+        private void comboBox_serialPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
+        private void comboBox_serialPort_DropDown(object sender, EventArgs e)
+        {
+            int maxWidth = 0;
+            foreach (var item in comboBox_serialPort.Items)
+            {
+                int itemWidth = TextRenderer.MeasureText(item.ToString(), comboBox_serialPort.Font).Width;
+                if (itemWidth > maxWidth)
+                {
+                    maxWidth = itemWidth;
+                }
+            }
+            comboBox_serialPort.DropDownWidth = maxWidth;
+        }
+    }
 }
