@@ -13,20 +13,19 @@ using System.Management;
 
 namespace 串口调试助手
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private Timer timer;
         private SerialPort _serialPort;
         // 获取系统中可用的串口列表
         private string[] portNames;// = SerialPort.GetPortNames();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            timer = new Timer();
-            timer.Interval = 1000; // 1000ms = 1s
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
+
+
+            comboBox_dataBit.SelectedIndex = 3; // 将第4个项设置为默认选中项
 
             // 获取系统中可用的串口列表
             string[] portNames = SerialPort.GetPortNames();
@@ -42,11 +41,21 @@ namespace 串口调试助手
                     // 输出串口描述信息
                     Console.WriteLine(portInfo["Description"].ToString());
 
-                    comboBox_serialPort.Items.Add(portInfo["Description"].ToString() + "(" + portName + ")");
+                    comboBox_serialPort.Items.Add(portName +" "+portInfo["Description"].ToString());
                     comboBox_serialPort.SelectedIndex = 0;
                 }
             }
             richTextBox_dataReceive.AppendText(comboBox_serialPort.Items[0].ToString());
+
+
+            //实例化一个定时器
+            timer = new Timer();
+            timer.Interval = 1000; // 1000ms = 1s
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+
+
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -56,16 +65,6 @@ namespace 串口调试助手
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-
-
-
-
-
 
         }
 

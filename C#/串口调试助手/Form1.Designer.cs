@@ -1,6 +1,6 @@
 ﻿namespace 串口调试助手
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -110,6 +110,7 @@
             // 
             // comboBox6
             // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(68, 182);
@@ -119,6 +120,7 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(68, 150);
             this.comboBox5.Name = "comboBox5";
@@ -147,7 +149,13 @@
             // 
             // comboBox_dataBit
             // 
+            this.comboBox_dataBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_dataBit.FormattingEnabled = true;
+            this.comboBox_dataBit.Items.AddRange(new object[] {
+            "5",
+            "6",
+            "7",
+            "8"});
             this.comboBox_dataBit.Location = new System.Drawing.Point(68, 88);
             this.comboBox_dataBit.Name = "comboBox_dataBit";
             this.comboBox_dataBit.Size = new System.Drawing.Size(121, 24);
@@ -155,6 +163,7 @@
             // 
             // comboBox_baudRate
             // 
+            this.comboBox_baudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_baudRate.FormattingEnabled = true;
             this.comboBox_baudRate.Items.AddRange(new object[] {
             "9600",
@@ -166,11 +175,17 @@
             this.comboBox_baudRate.Name = "comboBox_baudRate";
             this.comboBox_baudRate.Size = new System.Drawing.Size(121, 24);
             this.comboBox_baudRate.TabIndex = 8;
-            this.comboBox_baudRate.Text = "9600";
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "None",
+            "Even",
+            "Odd",
+            "Mark",
+            "Space"});
             this.comboBox4.Location = new System.Drawing.Point(68, 120);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 24);
@@ -218,6 +233,7 @@
             // 
             // comboBox_serialPort
             // 
+            this.comboBox_serialPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_serialPort.FormattingEnabled = true;
             this.comboBox_serialPort.Location = new System.Drawing.Point(68, 23);
             this.comboBox_serialPort.Name = "comboBox_serialPort";
@@ -482,7 +498,7 @@
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -497,7 +513,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBox_dataReceive);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "WSYN串口调试助手";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
