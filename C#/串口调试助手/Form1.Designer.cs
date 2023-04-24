@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox_dataReceive = new System.Windows.Forms.RichTextBox();
+            this.rtxDataReceive = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_SerialOpenClose = new System.Windows.Forms.Button();
             this.comboBox_serialPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,15 +54,15 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdoAsciiSend = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.rtxSend = new System.Windows.Forms.RichTextBox();
+            this.btnSerialDataSend = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,13 +77,13 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox_dataReceive
+            // rtxDataReceive
             // 
-            this.richTextBox_dataReceive.Location = new System.Drawing.Point(218, 44);
-            this.richTextBox_dataReceive.Name = "richTextBox_dataReceive";
-            this.richTextBox_dataReceive.Size = new System.Drawing.Size(515, 403);
-            this.richTextBox_dataReceive.TabIndex = 0;
-            this.richTextBox_dataReceive.Text = "";
+            this.rtxDataReceive.Location = new System.Drawing.Point(218, 44);
+            this.rtxDataReceive.Name = "rtxDataReceive";
+            this.rtxDataReceive.Size = new System.Drawing.Size(515, 403);
+            this.rtxDataReceive.TabIndex = 0;
+            this.rtxDataReceive.Text = "";
             // 
             // groupBox1
             // 
@@ -97,7 +97,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button_SerialOpenClose);
             this.groupBox1.Controls.Add(this.comboBox_serialPort);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -221,15 +221,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "波特率";
             // 
-            // button1
+            // button_SerialOpenClose
             // 
-            this.button1.Location = new System.Drawing.Point(6, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "扫描可用串口";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_SerialOpenClose.Location = new System.Drawing.Point(6, 208);
+            this.button_SerialOpenClose.Name = "button_SerialOpenClose";
+            this.button_SerialOpenClose.Size = new System.Drawing.Size(117, 23);
+            this.button_SerialOpenClose.TabIndex = 2;
+            this.button_SerialOpenClose.Text = "打开串口";
+            this.button_SerialOpenClose.UseVisualStyleBackColor = true;
+            this.button_SerialOpenClose.Click += new System.EventHandler(this.button_SerialOpenClose_Click);
             // 
             // comboBox_serialPort
             // 
@@ -240,7 +240,6 @@
             this.comboBox_serialPort.Size = new System.Drawing.Size(121, 24);
             this.comboBox_serialPort.TabIndex = 1;
             this.comboBox_serialPort.DropDown += new System.EventHandler(this.comboBox_serialPort_DropDown);
-            this.comboBox_serialPort.SelectedIndexChanged += new System.EventHandler(this.comboBox_serialPort_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -266,7 +265,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "接收设置";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButton_hex
             // 
@@ -326,7 +324,7 @@
             this.groupBox3.Controls.Add(this.numericUpDown1);
             this.groupBox3.Controls.Add(this.checkBox4);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.rdoAsciiSend);
             this.groupBox3.Font = new System.Drawing.Font("宋体", 12F);
             this.groupBox3.Location = new System.Drawing.Point(12, 431);
             this.groupBox3.Name = "groupBox3";
@@ -368,20 +366,20 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(49, 20);
             this.radioButton1.TabIndex = 18;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "HEX";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoAsciiSend
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(13, 25);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 20);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "ASCII";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoAsciiSend.AutoSize = true;
+            this.rdoAsciiSend.Checked = true;
+            this.rdoAsciiSend.Location = new System.Drawing.Point(13, 25);
+            this.rdoAsciiSend.Name = "rdoAsciiSend";
+            this.rdoAsciiSend.Size = new System.Drawing.Size(65, 20);
+            this.rdoAsciiSend.TabIndex = 17;
+            this.rdoAsciiSend.TabStop = true;
+            this.rdoAsciiSend.Text = "ASCII";
+            this.rdoAsciiSend.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -434,23 +432,23 @@
             this.textBox1.Size = new System.Drawing.Size(230, 21);
             this.textBox1.TabIndex = 0;
             // 
-            // richTextBox2
+            // rtxSend
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(218, 453);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(409, 68);
-            this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "";
+            this.rtxSend.Location = new System.Drawing.Point(218, 453);
+            this.rtxSend.Name = "rtxSend";
+            this.rtxSend.Size = new System.Drawing.Size(409, 68);
+            this.rtxSend.TabIndex = 4;
+            this.rtxSend.Text = "";
             // 
-            // button2
+            // btnSerialDataSend
             // 
-            this.button2.Location = new System.Drawing.Point(644, 460);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 52);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "扫描可用串口";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSerialDataSend.Location = new System.Drawing.Point(644, 460);
+            this.btnSerialDataSend.Name = "btnSerialDataSend";
+            this.btnSerialDataSend.Size = new System.Drawing.Size(74, 52);
+            this.btnSerialDataSend.TabIndex = 13;
+            this.btnSerialDataSend.Text = "发送";
+            this.btnSerialDataSend.UseVisualStyleBackColor = true;
+            this.btnSerialDataSend.Click += new System.EventHandler(this.btnSerialDataSend_Click);
             // 
             // comboBox1
             // 
@@ -505,13 +503,13 @@
             this.ClientSize = new System.Drawing.Size(752, 595);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.btnSerialDataSend);
+            this.Controls.Add(this.rtxSend);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.richTextBox_dataReceive);
+            this.Controls.Add(this.rtxDataReceive);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "WSYN串口调试助手";
@@ -533,7 +531,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox_dataReceive;
+        private System.Windows.Forms.RichTextBox rtxDataReceive;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox_serialPort;
         private System.Windows.Forms.Label label1;
@@ -543,7 +541,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_SerialOpenClose;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
@@ -559,8 +557,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox rtxSend;
+        private System.Windows.Forms.Button btnSerialDataSend;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton radioButton_hex;
         private System.Windows.Forms.RadioButton radioButton_ascii;
@@ -568,7 +566,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdoAsciiSend;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
