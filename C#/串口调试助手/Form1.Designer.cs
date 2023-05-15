@@ -48,7 +48,7 @@
             this.radioButton_ascii = new System.Windows.Forms.RadioButton();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkAutowrap = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -257,7 +257,7 @@
             this.groupBox2.Controls.Add(this.radioButton_ascii);
             this.groupBox2.Controls.Add(this.checkBox3);
             this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.chkAutowrap);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(12, 291);
             this.groupBox2.Name = "groupBox2";
@@ -308,15 +308,16 @@
             this.checkBox2.Text = "显示时间";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkAutowrap
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 54);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 20);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "自动换行";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkAutowrap.AutoSize = true;
+            this.chkAutowrap.Location = new System.Drawing.Point(6, 54);
+            this.chkAutowrap.Name = "chkAutowrap";
+            this.chkAutowrap.Size = new System.Drawing.Size(90, 20);
+            this.chkAutowrap.TabIndex = 3;
+            this.chkAutowrap.Text = "自动换行";
+            this.chkAutowrap.UseVisualStyleBackColor = true;
+            this.chkAutowrap.CheckedChanged += new System.EventHandler(this.chkAutowrap_CheckedChanged);
             // 
             // groupBox3
             // 
@@ -549,7 +550,7 @@
         private System.Windows.Forms.ComboBox comboBox_baudRate;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkAutowrap;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
