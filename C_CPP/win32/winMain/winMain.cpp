@@ -17,8 +17,19 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
+
+// lpCmdLine参数从名字上就猜到了，就是命令行参数，那LPSTR是啥呢，它其实就是一个字符串，
+// 你可以跟入定义就知道了，它其实就是char* ，指向char的指针，
+// 记得我上一篇文章中说的指针有创建数组的功能吗？对，其实这里传入的命令行参数应该是char[]，
+// 这就是我在第一篇文章中要说指针的原因。
+//
+//这里告诉大家一个技巧，我们怎么知道哪些参数是指针类型呢，
+//因为不是所有参数都有* 标识。技巧还是在命名上，以后，只要我们看到P开头的，或者LP开头的，都是指针类型。
+
+
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance,         // 窗口的句柄
+                     _In_opt_ HINSTANCE hPrevInstance,  // 前一个实例，进程列表中会有两个kill.exe，
+                                                        // 这时候第一次运行的实例号假设为0001，就传递第一个参数hInstance，第二次运行的假设实例号为0002，就传给了hPrevInstance参数
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
